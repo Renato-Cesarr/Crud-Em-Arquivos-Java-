@@ -14,10 +14,6 @@ public class Validacoes {
     private static final String AMARELO = "\033[33m";
     static boolean verficicado = false;
     
-
-
-
-
 	public boolean ValidarEntradaInserir() { 
 		
 			HashSet<String> dadosDePersonagens = new HashSet<String>();
@@ -108,7 +104,6 @@ public class Validacoes {
 	}
 	public static int verificaEntradaDeTrocaDeTela(int numero) {
 		 Scanner scanner = new Scanner(System.in);
-	        numero = 0;
 	        boolean valido = false;
 
 	        while (!valido) {
@@ -124,7 +119,6 @@ public class Validacoes {
 	                System.out.println("Entrada inválida. Digite apenas números.");
 	                scanner.next(); 
 	            }
-	        return numero;
 	    }
 			return numero;
 	}

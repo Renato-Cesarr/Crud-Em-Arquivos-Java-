@@ -9,9 +9,11 @@ import java.util.List;
 import java.util.Scanner;
 
 import CrudValidações.Validacoes;
+import Main.MenuDaTelaMain;
 
 public class CrudSelect {
 
+	
 	static String nomeArquivo = "CrudBasico.txt";
 	static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/ArquivoDoCrud/CrudBasico.txt";
 	static String linha;
@@ -26,7 +28,7 @@ public class CrudSelect {
 	private static final String AMARELO = "\033[33m";
 	static Validacoes v = new Validacoes();
 
-	public static void consultaGerald() throws IOException {
+	public static void consultaGerald() throws IOException, InterruptedException {
 		v.limparTela();
 		String continuarConsulta;
 		boolean continua;
@@ -60,6 +62,9 @@ public class CrudSelect {
 			continua = (validar.verificaRespostaSimples(continuarConsulta).equals("sim"));
 
 		} while (continua);
+        Thread.sleep(3000);
+		MenuDaTelaMain.chamarMenu();
+		
 	}
 
 	public static void consultaGeral() throws IOException {

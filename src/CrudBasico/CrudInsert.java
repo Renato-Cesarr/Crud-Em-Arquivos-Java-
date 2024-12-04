@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 import CrudValidações.Validacoes;
+import Main.MenuDaTelaMain;
 
 public class CrudInsert {
 
@@ -34,7 +35,7 @@ public class CrudInsert {
 	static File diretorio = new File(caminhoParaDiretorio);
 	static HashMap<Integer, String> idDoUsuario = new HashMap<Integer, String>();
 
-	public static void inserir() throws IOException {
+	public static void inserir() throws IOException, InterruptedException {
 		exibirLayout();
 		ordemIDs();
 		
@@ -47,6 +48,9 @@ public class CrudInsert {
 		verificarSeDiretorioExisteSalvar(textoDoArquivo);
 
 		id++;
+		
+        Thread.sleep(3000);
+		MenuDaTelaMain.chamarMenu();
 
 	}
 	public static void inserirDadosUsuario() {

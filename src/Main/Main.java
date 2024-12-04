@@ -1,3 +1,4 @@
+package Main;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
@@ -8,11 +9,9 @@ import CrudBasico.CrudSelect;
 
 public class Main {
 	
-	public static void main(String[] args) throws FileNotFoundException, IOException {
-
-    //       CrudInsert.inserir(); 
-      //     CrudSelect.consultaGerald();
-           CrudDelete.deletarArquivo();
+	public static void main(String[] args) throws FileNotFoundException, IOException, InterruptedException {
+		
+		MenuDaTelaMain.chamarMenu();
 	}
 	
 }

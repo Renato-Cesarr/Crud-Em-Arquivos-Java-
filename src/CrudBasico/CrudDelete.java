@@ -1,27 +1,79 @@
 package CrudBasico;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+import CrudValidações.Constantes;
 import CrudValidações.Validacoes;
+import Main.MenuDaTelaMain;
 
 public class CrudDelete {
-    private static final String CIANO = "\033[36m";
-    private static final String RESET = "\033[0m";
-    private static final String VERMELHO = "\033[31m";
-    private static final String AMARELO = "\033[33m";
+    static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/ArquivoDoCrud";
+    static File diretorio = new File(caminhoParaDiretorio);
+    static String nomeArquivo = "CrudBasico.txt";
+    static Constantes c = new Constantes();
     static Scanner scan = new Scanner(System.in);
-    
-    
-	public static void deletarArquivo() throws IOException {
-		consulta();
-		System.out.println("informe o ID a ser deletado:");
-	}
-	public static void consulta() throws IOException {
-        System.out.println(AMARELO + "Deseja realizar uma consulta geral antes de deletar? (sim/nao): " + RESET);
+
+    public static void deletarArquivo() throws IOException, InterruptedException {
+        FileReader fileReader = null;  
+        FileWriter fileWriter = null;   
+        BufferedReader leitor = null; 
+        consultaOpcional();
+        
+        String copiaArquivo = "CrudBasicoCopia.txt";
+        String linha = "";
+        System.out.println("Informe o ID a ser deletado:");
+        int idAserExcluido = scan.nextInt();
+        scan.nextLine();
+        
+        if (!diretorio.exists()) {
+            diretorio.mkdirs();
+        }
+
+        File arquivoOriginal = new File(diretorio, nomeArquivo);
+        File arquivoCopia = new File(diretorio, copiaArquivo);            
+        
+        fileReader = new FileReader(arquivoOriginal);  
+        fileWriter = new FileWriter(arquivoCopia);
+        leitor = new BufferedReader(fileReader);
+        
+        while ((linha = leitor.readLine()) != null) {  
+            String[] dados = linha.split(",");
+            int idNovoArquivo = Integer.parseInt(dados[0]);
+            if (idNovoArquivo != idAserExcluido) {
+                fileWriter.write(linha + "\r\n");
+            }
+        }
+
+        leitor.close();
+        fileWriter.close();
+        fileReader.close();
+        
+        File original = new File(caminhoParaDiretorio, nomeArquivo);
+        File copia = new File(caminhoParaDiretorio, copiaArquivo);
+        if (original.delete()) {
+            copia.renameTo(original);
+            System.out.println("Registro deletado com sucesso!");
+            consultaOpcional();
+
+        } else {
+            System.out.println("Erro ao deletar o registro.");
+        }
+        Thread.sleep(3000);
+        MenuDaTelaMain.chamarMenu();
+    }
+
+    public static void consultaOpcional() throws IOException {
+        System.out.println(Constantes.AMARELO + "Deseja realizar uma consulta geral antes de deletar? (sim/nao): " + Constantes.RESET);
         String mostrarConsulta = scan.nextLine();
         mostrarConsulta = Validacoes.verificarEntrada(mostrarConsulta);
         if(mostrarConsulta.toLowerCase().equals("sim")){
-        	CrudSelect.consultaGeral();}
+            CrudSelect.consultaGeral();
         }
+    }
 }
+

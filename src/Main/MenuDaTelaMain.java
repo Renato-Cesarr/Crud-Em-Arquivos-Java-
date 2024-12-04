@@ -1,11 +1,14 @@
+package Main;
 import java.io.IOException;
 import java.util.Scanner;
 
+import CrudBasico.CrudDelete;
 import CrudBasico.CrudInsert;
 import CrudBasico.CrudSelect;
 import CrudValidações.Validacoes;
 
 public class MenuDaTelaMain {
+	
 
     public static final String RESET = "\u001B[0m";
     public static final String CYAN = "\u001B[36m";
@@ -16,7 +19,7 @@ public class MenuDaTelaMain {
     public static final String WHITE = "\u001B[37m";
     public static final String BLUE = "\u001B[34m";
 
-    public static void main(String[] args) throws InterruptedException, IOException {
+    public static void chamarMenu() throws InterruptedException, IOException {
         limparTela();
         mostrarTitulo();
         desenhaTelaInicial();
@@ -49,7 +52,7 @@ public class MenuDaTelaMain {
         System.out.println();
     }
 
-    public static void desenhaTelaInicial() throws IOException {
+    public static void desenhaTelaInicial() throws IOException, InterruptedException {
         System.out.println(PURPLE + "╔══════════════════════════════════════════════════════════════════════════════════════╗" + RESET);
         System.out.println(PURPLE + "║" + RED + "        🗡️  PREPARE-SE PARA A MAIOR AVENTURA DO RPG JAVA!  🛡️" + PURPLE + "║" + RESET);
         System.out.println(PURPLE + "╠══════════════════════════════════════════════════════════════════════════════════════╣" + RESET);
@@ -73,8 +76,9 @@ public class MenuDaTelaMain {
 	   case 2:{System.out.print("\033[H\033[2J");
 		       System.out.flush();
 	           CrudSelect.consultaGerald();}
-	   case 3:{System.out.println("em criação");};
-	   case 4:{System.out.println("em criação");};
+	   case 3:{System.out.println("em Produção");}
+	   case 4:{Validacoes.limparTela();
+       			CrudDelete.deletarArquivo();};
 	default:
 		throw new IllegalArgumentException("Unexpected value: " + m);
 	}

@@ -1,6 +1,5 @@
 1,patolino,mago,cajado,100,100
-2,renato,assasino,adaga,190,10
 3,macus,bardo,adaga,190,10
 4,mago,mago,pistola,190,10
 5,peroqsi,bardo,luvas,80,120
-6,renato da silva,bardo,cetro,120,80
+6,renato o mago,atirador,espada,100,100
