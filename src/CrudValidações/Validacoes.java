@@ -91,7 +91,7 @@ public class Validacoes {
 	        } else if (consulta.equals("dados do personagem") ||
 	                   consulta.equals("dados") ||
 	                   consulta.equals("dado do personagem")) {
-	            System.out.println("Informe algum dado, como NOME, CLASSE, ou TIPO DE ARMA");
+	            System.out.println("Informe algum dado, como NOME, CLASSE,TIPO DE ARMA ou TUDO");
 	            verficicado = true; 
 	        } else {
 	            System.out.println("Informe corretamente os dados");
