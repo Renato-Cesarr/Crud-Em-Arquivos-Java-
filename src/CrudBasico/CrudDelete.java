@@ -19,6 +19,12 @@ public class CrudDelete {
     static Scanner scan = new Scanner(System.in);
 
     public static void deletarArquivo() throws IOException, InterruptedException {
+        System.out.println("\033[1;35m✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨\033[0m");
+        System.out.println("\033[1;35m✨    " + Constantes.CIANO + "Deletar Registro" + "\033[1;35m   ✨");
+        System.out.println("\033[1;35m✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨\033[0m");
+
+        System.out.println("\n" + Constantes.AMARELO + "🔴 Informe o ID a ser deletado (⚡): " + Constantes.RESET);
+     
         FileReader fileReader = null;  
         FileWriter fileWriter = null;   
         BufferedReader leitor = null; 

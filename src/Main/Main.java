@@ -6,6 +6,7 @@ import java.util.Scanner;
 import CrudBasico.CrudDelete;
 import CrudBasico.CrudInsert;
 import CrudBasico.CrudSelect;
+import CrudBasico.CrudUpdate;
 
 public class Main {
 	
