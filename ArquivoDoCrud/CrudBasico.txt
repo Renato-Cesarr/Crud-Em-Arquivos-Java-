@@ -1,14 +1,6 @@
-1,renato o mago,mago,espada,50,150
-2,sacola de bosta,guerreiro,espada,100,100
-3,samuel,mago,arco,50,150
-4,samuel,mago,arco,100,100
-5,diabo,guerreiro,espada,100,100
-6,jesus,lutador,cajado,98,102
-7,moises,mago,cajado,190,10
-8,marcos,assasino,adaga,120,80
-9,re,mago,adaga,100,100
-10,marceline,bardo,grimorio,100,100
-11,renato,mago,cajado,199,1
-12,twiteer,assasino,adaga,80,120
-13,renatão,bardo,arco,100,100
-14,teste,atirador,pistola,90,110
+1,patolino,mago,cajado,100,100
+2,renato,assasino,adaga,190,10
+3,macus,bardo,adaga,190,10
+4,mago,mago,pistola,190,10
+5,peroqsi,bardo,luvas,80,120
+6,renato da silva,bardo,cetro,120,80

@@ -106,6 +106,42 @@ public class Validacoes {
 
 	    return consulta;  
 	}
+	public static int verificaEntradaDeTrocaDeTela(int numero) {
+		 Scanner scanner = new Scanner(System.in);
+	        numero = 0;
+	        boolean valido = false;
 
+	        while (!valido) {
+	            System.out.print("Digite um número de 1 a 4: ");
+	            if (scanner.hasNextInt()) {
+	                numero = scanner.nextInt();
+	                if (numero >= 1 && numero <= 4) {
+	                    valido = true; 
+	                } else {
+	                    System.out.println("Número fora do intervalo. Tente novamente.");
+	                }
+	            } else {
+	                System.out.println("Entrada inválida. Digite apenas números.");
+	                scanner.next(); 
+	            }
+	        return numero;
+	    }
+			return numero;
+	}
+    public static void limparTela() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+    public static String verificarEntrada(String entrada) {
+    	System.out.println(entrada);
+        while (true) {
+            if (entrada.trim().toLowerCase().equals("sim") || entrada.trim().toLowerCase().equals("nao")) {
+                return entrada;
+            } else {
+                System.out.println(VERMELHO+"Entrada inválida. Tente novamente."+RESET);
+                entrada = scan.nextLine();
+            }
+        }
+    }
 
 }
