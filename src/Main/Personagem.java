@@ -8,7 +8,7 @@ public class Personagem {
 	private int pontosDeMana;
 
 	public Personagem(String nomeDoPersonagem, String nomeDaClasse, String tipoDeArma, int pontosDeHp,
-		int pontosDeMana) {
+			int pontosDeMana) {
 		this.nomeDoPersonagem = nomeDoPersonagem;
 		this.nomeDaClasse = nomeDaClasse;
 		this.tipoDeArma = tipoDeArma;

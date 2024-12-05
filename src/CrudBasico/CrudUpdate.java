@@ -71,7 +71,7 @@ public class CrudUpdate {
                     String novoNome = "", novaClasse = "", novaArma = "";
                     int novosPontosVida = 0, novosPontosMana = 0;
                     boolean entradaValida;
-
+                    
                     do {
                         try {
                             System.out.println("Digite o novo nome do personagem:");

@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import CrudValidações.Constantes;
-import CrudValidações.Validacoes;
+import CrudValidações.Validacoes; 
 import Main.MenuDaTelaMain;
 import Main.desenhoDeTelas;
 

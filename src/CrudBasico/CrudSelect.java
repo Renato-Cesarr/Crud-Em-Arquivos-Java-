@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import CrudValidações.Constantes;
 import CrudValidações.Validacoes;
 import Main.MenuDaTelaMain;
 
@@ -21,9 +22,6 @@ public class CrudSelect {
 	static Validacoes validar = new Validacoes();
 	static ArrayList<String> listaDeDados = new ArrayList<>();
 	static boolean registroEncontrado = false;
-	private static final String CIANO = "\033[36m";
-	private static final String RESET = "\033[0m";
-	private static final String VERMELHO = "\033[31m";
 	static Validacoes v = new Validacoes();
 
 	public static void consultaGerald() throws IOException, InterruptedException {
@@ -45,7 +43,7 @@ public class CrudSelect {
 			} else {
 				while ((linha = lerArquivo.readLine()) != null) {
 					if (linha.contains(dadoDaconsulta)) {
-						System.out.println(CIANO + "Registro encontrado: " + linha + RESET);
+						System.out.println(Constantes.CIANO + "Registro encontrado: " + linha + Constantes.RESET);
 						registroEncontrado = true;
 						listaDeDados.add(linha);
 					}
@@ -54,7 +52,7 @@ public class CrudSelect {
 			lerArquivo.close();
 
 			if (!registroEncontrado && !dadoDaconsulta.equals("tudo") && !tipoConsulta.equals("id")) {
-				System.out.println(VERMELHO + "Nenhum registro encontrado para: " + dadoDaconsulta + RESET);
+				System.out.println(Constantes.VERMELHO + "Nenhum registro encontrado para: " + dadoDaconsulta + Constantes.RESET);
 			}
 			continuarConsulta = "";
 			continua = (validar.verificaRespostaSimples(continuarConsulta).equals("sim"));
@@ -68,7 +66,7 @@ public class CrudSelect {
 	public static void consultaGeral() throws IOException {
 		BufferedReader lerArquivo = new BufferedReader(new FileReader(caminhoParaDiretorio));
 		while ((linha = lerArquivo.readLine()) != null) {
-			System.out.println(CIANO + "Registro encontrado: " + linha + RESET);
+			System.out.println(Constantes.CIANO + "Registro encontrado: " + linha + Constantes.RESET);
 		}
 	}
 
@@ -84,7 +82,7 @@ public class CrudSelect {
 			String linha;
 			while ((linha = lerArquivo.readLine()) != null) {
 				if (linha.startsWith(id)) {
-					System.out.println(CIANO + "Registro encontrado: " + linha + RESET);
+					System.out.println(Constantes.CIANO + "Registro encontrado: " + linha + Constantes.RESET);
 					registroEncontrado = true;
 					listaDeDados.add(linha);
 				}
@@ -93,7 +91,7 @@ public class CrudSelect {
 		if (!registroEncontrado)
 
 		{
-			System.out.println(VERMELHO + "ID inválido ou não encontrado!" + RESET);
+			System.out.println(Constantes.VERMELHO + "ID inválido ou não encontrado!" + Constantes.RESET);
 		}
 	}
 
