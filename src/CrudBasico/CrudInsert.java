@@ -23,7 +23,7 @@ public class CrudInsert {
 	public static String tipoDeArma;
 	public static int pontosDeHp;
 	public static int pontosDeMana;
-
+	
 	static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/ArquivoDoCrud";
 	static String nomeArquivo = "CrudBasico.txt";
 	static File diretorio = new File(caminhoParaDiretorio);
