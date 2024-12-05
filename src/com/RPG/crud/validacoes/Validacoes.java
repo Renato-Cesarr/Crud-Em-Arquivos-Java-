@@ -1,17 +1,15 @@
-package CrudValidações;
+package com.RPG.crud.validacoes;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Scanner;
-
-import CrudBasico.CrudInsert;
+import com.RPG.crud.basico.*;
 
 public class Validacoes {
 	static CrudInsert c = new CrudInsert();
 	static Scanner scan = new Scanner(System.in);
 	static Constantes cores = new Constantes();
 	static boolean verficicado = false;
-
+ 
 	public static boolean validarEntradaUpdate(String nome, String classe, String arma, int vida, int mana) {
 		HashSet<String> dadosDePersonagens = new HashSet<>();
 		HashSet<String> dadosDeArmas = new HashSet<>();

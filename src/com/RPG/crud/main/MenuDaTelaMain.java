@@ -1,13 +1,9 @@
-package Main;
+package com.RPG.crud.main;
+import com.RPG.crud.basico.*;
+import com.RPG.crud.validacoes.*;
 
 import java.io.IOException;
 import java.util.Scanner;
-
-import CrudBasico.CrudDelete;
-import CrudBasico.CrudInsert;
-import CrudBasico.CrudSelect;
-import CrudBasico.CrudUpdate;
-import CrudValidações.Validacoes;
 
 public class MenuDaTelaMain {
 
@@ -26,25 +22,28 @@ public class MenuDaTelaMain {
 			case 1: {
 				Validacoes.limparTela();
 				CrudInsert.inserir();
-			};
+				break;
+			}
 			case 2: {
 				System.out.print("\033[H\033[2J");
 				System.out.flush();
 				CrudSelect.consultaGerald();
+				break;
 			}
 			case 3: {
 				System.out.print("\033[H\033[2J");
 				System.out.flush();
 				CrudUpdate.alterarArquivo();
-				;
+				break;
 			}
 			case 4: {
 				Validacoes.limparTela();
 				CrudDelete.deletarArquivo();
+				break;
 			}
-				;
 			case 5: {
 				System.out.println("Adeus");
+				break;
 			}
 			default:
 				throw new IllegalArgumentException("Unexpected value: " + m);

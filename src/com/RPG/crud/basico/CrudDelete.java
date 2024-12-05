@@ -1,4 +1,6 @@
-package CrudBasico;
+package com.RPG.crud.basico;
+import com.RPG.crud.main.*;
+import com.RPG.crud.validacoes.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,13 +9,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-import CrudValidações.Constantes;
-import CrudValidações.Validacoes; 
-import Main.MenuDaTelaMain;
-import Main.desenhoDeTelas;
-
 public class CrudDelete {
-	static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/ArquivoDoCrud";
+	static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/resources";
 	static File diretorio = new File(caminhoParaDiretorio);
 	static String nomeArquivo = "CrudBasico.txt";
 	static Scanner scan = new Scanner(System.in);
@@ -36,7 +33,6 @@ public class CrudDelete {
 		if (!diretorio.exists()) {
 			diretorio.mkdirs();
 		}
-
 		if (fazerDelete(idASerExcluido)) {
 			File original = new File(caminhoParaDiretorio, nomeArquivo);
 			File copia = new File(caminhoParaDiretorio, copiaArquivo);

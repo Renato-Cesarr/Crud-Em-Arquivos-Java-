@@ -1,4 +1,4 @@
-package CrudValidações;
+package com.RPG.crud.validacoes;
 
 import java.util.Scanner;
 

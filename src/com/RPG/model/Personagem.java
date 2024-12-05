@@ -1,4 +1,4 @@
-package Main;
+package com.RPG.model;
 
 public class Personagem {
 	private String nomeDoPersonagem;

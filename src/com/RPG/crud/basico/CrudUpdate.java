@@ -1,4 +1,6 @@
-package CrudBasico;
+package com.RPG.crud.basico;
+import com.RPG.crud.main.*;
+import com.RPG.crud.validacoes.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,13 +9,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-import CrudValidações.Constantes;
-import CrudValidações.Validacoes;
-import Main.MenuDaTelaMain;
-import Main.desenhoDeTelas;
 
 public class CrudUpdate {
-    private static final String caminhoParaODiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/ArquivoDoCrud";
+    private static final String caminhoParaODiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/resources";
     private static final File diretorio = new File(caminhoParaODiretorio);
     private static final String nomeArquivo = "CrudBasico.txt";
     private static final String copiaArquivo = "CrudBasicoCopia.txt";

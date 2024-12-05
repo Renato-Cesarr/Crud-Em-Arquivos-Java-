@@ -1,5 +1,6 @@
-package CrudBasico;
-
+package com.RPG.crud.basico;
+import com.RPG.crud.validacoes.*;
+import com.RPG.crud.main.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -8,14 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import CrudValidações.Constantes;
-import CrudValidações.Validacoes;
-import Main.MenuDaTelaMain;
-
 public class CrudSelect {
 
 	static String nomeArquivo = "CrudBasico.txt";
-	static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/ArquivoDoCrud/CrudBasico.txt";
+	static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/resources/CrudBasico.txt";
 	static String linha;
 	static File diretorio = new File(caminhoParaDiretorio);
 	static Scanner scan = new Scanner(System.in);

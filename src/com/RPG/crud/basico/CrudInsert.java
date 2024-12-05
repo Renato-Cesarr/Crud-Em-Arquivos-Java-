@@ -1,4 +1,7 @@
-package CrudBasico;
+package com.RPG.crud.basico;
+import com.RPG.crud.main.*;
+import com.RPG.crud.validacoes.*;
+import com.RPG.model.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,17 +12,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import CrudValidações.Validacoes;
-import Main.MenuDaTelaMain;
-import Main.Personagem;
-import Main.desenhoDeTelas;
-
 public class CrudInsert {
 
 	static Scanner scan = new Scanner(System.in);
 	static int id = 1;
 
-	static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/ArquivoDoCrud";
+	static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/resources";
 	static String nomeArquivo = "CrudBasico.txt";
 	static File diretorio = new File(caminhoParaDiretorio);
 	static HashMap<Integer, Personagem> idDoUsuario = new HashMap<Integer, Personagem>();

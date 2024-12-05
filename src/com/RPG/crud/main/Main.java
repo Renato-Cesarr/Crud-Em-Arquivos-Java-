@@ -1,13 +1,8 @@
-package Main;
+package com.RPG.crud.main;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
 
-import CrudBasico.CrudDelete;
-import CrudBasico.CrudInsert;
-import CrudBasico.CrudSelect;
-import CrudBasico.CrudUpdate;
 
 public class Main {
 

@@ -1,6 +1,6 @@
-package Main;
+package com.RPG.crud.main;
 
-import CrudValidações.Constantes;
+import com.RPG.crud.validacoes.*;
 
 public class desenhoDeTelas {
 	public static final String RESET = "\u001B[0m";
@@ -29,7 +29,7 @@ public class desenhoDeTelas {
 		System.out.println(PURPLE + "║   " + YELLOW
 				+ "2️⃣ Visualizar personagens criados                    👁️              ║" + RESET);
 		System.out.println(PURPLE + "║   " + CYAN
-				+ "3️⃣ Alterar personagem                                  ✏️              ║" + RESET);
+				+ "3️⃣ Alterr personagem                                  ✏️              ║" + RESET);
 		System.out.println(PURPLE + "║   " + RED
 				+ "4️⃣ Deletar personagem                                   ❌              ║" + RESET);
 		System.out.println(PURPLE + "║   " + WHITE
@@ -57,12 +57,12 @@ public class desenhoDeTelas {
 				RED + "                       ╚════╝ " + YELLOW + "╚═╝  ╚═╝" + GREEN + "  ╚═══╝  " + BLUE + "╚═╝  ╚═╝"
 						+ PURPLE };
 
-		System.out.println(PURPLE + "═════════════════════════════════════════════════════════════════" + RESET);
+		System.out.println(PURPLE + "════════════════════════════════════════════════════════════════════════════════════════" + RESET);
 		for (String linha : titulo) {
 			System.out.println(linha);
 			Thread.sleep(200);
 		}
-		System.out.println(PURPLE + "═════════════════════════════════════════════════════════════════" + RESET);
+		System.out.println(PURPLE + "════════════════════════════════════════════════════════════════════════════════════════" + RESET);
 		Thread.sleep(500);
 		System.out.println(YELLOW + "                 Bem-vindo ao lendário RPG JAVA! 🌟" + RESET);
 		Thread.sleep(1000);
