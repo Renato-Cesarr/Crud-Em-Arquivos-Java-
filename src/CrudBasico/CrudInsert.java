@@ -71,7 +71,8 @@ public class CrudInsert {
 				System.out.println("Não digite texto no lugar dos números!");
 				scan.nextLine();
 			}
-			ValidacaoDeInformacoes = Validacoes.validarEntradaUpdate(nomeDoPersonagem, nomeDaClasse, tipoDeArma, pontosDeHp,pontosDeMana);
+			ValidacaoDeInformacoes = Validacoes.validarEntradaUpdate(nomeDoPersonagem, nomeDaClasse, tipoDeArma,
+					pontosDeHp, pontosDeMana);
 		} while (!ValidacaoDeInformacoes);
 
 		return new Personagem(nomeDoPersonagem, nomeDaClasse, tipoDeArma, pontosDeHp, pontosDeMana);
