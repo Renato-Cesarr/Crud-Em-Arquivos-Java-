@@ -62,8 +62,7 @@ public class CrudInsert {
 				nomeDaClasse = scan.nextLine().toLowerCase();
 				System.out.println("Escolha sua arma: ");
 				tipoDeArma = scan.nextLine().toLowerCase();
-				System.out
-						.println("Distribua 200 pontos entre " + "\033[31mVIDA\033[0m" + " e " + "\033[34mMana\033[0m");
+				System.out.println("Distribua 200 pontos entre " + "\033[31mVIDA\033[0m" + " e " + "\033[34mMana\033[0m");
 				pontosDeHp = scan.nextInt();
 				pontosDeMana = scan.nextInt();
 				scan.nextLine();

@@ -49,7 +49,7 @@ public class CrudSelect {
 						registroEncontrado = true;
 						listaDeDados.add(linha);
 					}
-				}
+				} 
 			}
 			lerArquivo.close();
 

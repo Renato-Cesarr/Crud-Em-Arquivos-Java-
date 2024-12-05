@@ -45,6 +45,12 @@ public class Validacoes {
             } else if (nome.isEmpty()) {
                 System.out.println("Nome não pode estar vazio!");
                 return false;
+            }else if (dadosDePersonagens.contains(nome.toLowerCase().trim())) {
+            	System.out.println("O nome do personagem não pode ser nome de Classes");
+            	return false;
+            }else if (dadosDeArmas.contains(nome.toLowerCase().trim())) {
+            	System.out.println("O nome do personagem não pode ser o nome das armas");
+            	return false;
             }
             if (!dadosDePersonagens.contains(classe.toLowerCase().trim())) {
                 System.out.println("Classe inválida!");

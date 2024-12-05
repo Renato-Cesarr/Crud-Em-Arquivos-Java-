@@ -13,96 +13,93 @@ import Main.MenuDaTelaMain;
 import Main.desenhoDeTelas;
 
 public class CrudUpdate {
-	static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/ArquivoDoCrud";
-	static File diretorio = new File(caminhoParaDiretorio);
-	static String nomeArquivo = "CrudBasico.txt";
-	static Constantes c = new Constantes();
-	static Scanner scan = new Scanner(System.in);
-	static FileReader fileReader = null;
-	static FileWriter fileWriter = null;
-	static BufferedReader leitor = null;
-	static int idAserAlterado = 0;
-	static String copiaArquivo = "CrudBasicoCopia.txt";
-	static String linha = "";
+    private static final String caminhoParaODiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/ArquivoDoCrud";
+    private static final File diretorio = new File(caminhoParaODiretorio);
+    private static final String nomeArquivo = "CrudBasico.txt";
+    private static final String copiaArquivo = "CrudBasicoCopia.txt";
+    private static final Scanner scan = new Scanner(System.in);
+    
+    private static int idAserAlterado;
+    
+    public static void alterarArquivo() throws IOException, InterruptedException {
+        desenhoDeTelas.exibirTelaUpdate();
+        CrudDelete.consultaOpcional();
 
-	public static void alterarArquivo() throws IOException, InterruptedException {
+        System.out.println("Informe o ID a ser alterado:");
+        idAserAlterado = scan.nextInt();
+        scan.nextLine();
 
-		desenhoDeTelas.exibirTelaUpdate();
-		CrudDelete.consultaOpcional();
+        if (!diretorio.exists()) {
+            diretorio.mkdirs();
+        }
+        
+        chamarMudanca();
 
-		System.out.println("Informe o ID a ser alterado:");
-		idAserAlterado = scan.nextInt();
-		scan.nextLine();
+        File original = new File(caminhoParaODiretorio, nomeArquivo);
+        File copia = new File(caminhoParaODiretorio, copiaArquivo);
+        
+        if (original.delete()) {
+            copia.renameTo(original);
+            System.out.println("Registro alterado com sucesso!");
+        } else {
+            System.out.println("Erro ao alterar o registro.");
+        }
 
-		if (!diretorio.exists()) {
-			diretorio.mkdirs();
-		}
-		chamarMudanca(); 
+        Thread.sleep(3000);
+        MenuDaTelaMain.chamarMenu();
+    }
 
-		leitor.close();
-		fileWriter.close();
-		fileReader.close();
+    public static void chamarMudanca() throws IOException {
+        File arquivoOriginal = new File(diretorio, nomeArquivo);
+        File arquivoCopia = new File(diretorio, copiaArquivo);
 
-		File original = new File(caminhoParaDiretorio, nomeArquivo);
-		File copia = new File(caminhoParaDiretorio, copiaArquivo);
-		if (original.delete()) {
-			copia.renameTo(original);
-			System.out.println("Registro alterado com sucesso!");
-		} else {
-			System.out.println("Erro ao alterar o registro.");
-		}
+        try (BufferedReader leitor = new BufferedReader(new FileReader(arquivoOriginal));
+             FileWriter fileWriter = new FileWriter(arquivoCopia)) {
+             
+            boolean encontrado = false;
+            String linha;
 
-		Thread.sleep(3000);
-		MenuDaTelaMain.chamarMenu();
-	}
+            while ((linha = leitor.readLine()) != null) {
+                String[] dados = linha.split(",");
+                int idNovoArquivo = Integer.parseInt(dados[0]);
+                
+                if (idNovoArquivo == idAserAlterado) {
+                    encontrado = true;
+                    System.out.println("Registro encontrado: " + linha);
+                    System.out.println("Informe os novos dados para o registro com ID " + idAserAlterado);
+                    
+                    String novoNome = "", novaClasse = "", novaArma = "";
+                    int novosPontosVida = 0, novosPontosMana = 0;
+                    boolean entradaValida;
 
-	public static void chamarMudanca() throws IOException {
-		File arquivoOriginal = new File(diretorio, nomeArquivo);
-		File arquivoCopia = new File(diretorio, copiaArquivo);
+                    do {
+                        try {
+                            System.out.println("Digite o novo nome do personagem:");
+                            novoNome = scan.nextLine();
+                            System.out.println("Digite qual sua classe:");
+                            novaClasse = scan.nextLine();
+                            System.out.println("Escolha sua arma:");
+                            novaArma = scan.nextLine();
+                            System.out.println("Distribua 200 pontos entre " + "\033[31mVIDA\033[0m" + " e " + "\033[34mMana\033[0m");
+                            novosPontosVida = scan.nextInt();
+                            novosPontosMana = scan.nextInt();
+                            scan.nextLine();
 
-		fileReader = new FileReader(arquivoOriginal);
-		fileWriter = new FileWriter(arquivoCopia);
-		leitor = new BufferedReader(fileReader);
-		boolean encontrado = false;
+                            entradaValida = Validacoes.validarEntradaUpdate(novoNome, novaClasse, novaArma, novosPontosVida, novosPontosMana);
+                        } catch (Exception e) {
+                            System.out.println("Erro: Não digite texto no lugar dos números! Por favor, insira os dados novamente.");
+                            scan.nextLine();
+                            entradaValida = false;
+                        }
+                    } while (!entradaValida);
 
-		while ((linha = leitor.readLine()) != null) {
-			String[] dados = linha.split(",");
-			int idNovoArquivo = Integer.parseInt(dados[0]);
-			if (idNovoArquivo == idAserAlterado) {
-				encontrado = true;
-				System.out.println("Registro encontrado: " + linha);
-				System.out.println("Informe os novos dados para o registro com ID " + idAserAlterado);
-
-				String novoNome, novaClasse, novaArma;
-				int novosPontosVida, novosPontosMana;
-				boolean entradaValida;
-
-				do {
-					System.out.println("Digite o novo nome do personagem:");
-					novoNome = scan.nextLine();
-					System.out.println("Digite qual sua classe:");
-					novaClasse = scan.nextLine();
-					System.out.println("Escolha sua arma:");
-					novaArma = scan.nextLine();
-					System.out.println("Distribua 200 pontos entre VIDA e Mana:");
-					novosPontosVida = scan.nextInt();
-					novosPontosMana = scan.nextInt();
-					scan.nextLine();
-
-					entradaValida = Validacoes.validarEntradaUpdate(novoNome, novaClasse, novaArma,
-							novosPontosVida, novosPontosMana);
-					if (!entradaValida) {
-						System.out.println("Por favor, insira os dados novamente.");
-					}
-				} while (!entradaValida);
-
-				String linhaAtualizada = idAserAlterado + "," + novoNome + "," + novaClasse + "," + novaArma + ","
-						+ novosPontosVida + "," + novosPontosMana;
-
-				fileWriter.write(linhaAtualizada + "\r\n");
-			} else {
-				fileWriter.write(linha + "\r\n");
-			}
-		}
-	}
+                    String linhaAtualizada = idAserAlterado + "," + novoNome + "," + novaClasse + "," + novaArma + ","
+                            + novosPontosVida + "," + novosPontosMana;
+                    fileWriter.write(linhaAtualizada + "\r\n");
+                } else {
+                    fileWriter.write(linha + "\r\n");
+                }
+            }
+        }
+    }
 }
