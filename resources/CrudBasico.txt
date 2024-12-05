@@ -1,4 +1,4 @@
-1,JESUS CRISTO,BARDO,CAJADO,100,100
+1,Galadriel,atirador,luvas,96,104
 2,Lirien,atirador,arco,89,111
 3,Elaris,atirador,grimorio,30,170
 4,Arannis,lutador,luvas,43,157
@@ -997,6 +997,10 @@
 997,Calen,mago,cetro,44,156
 998,Calen,mago,cetro,181,19
 999,Kadence,invocador,luvas,166,34
-1000,Seraphina,atirador,cetro,115,851001,renato,mago,adaga,100,100
-1001,renato,mago,adaga,100,100
-1002,peru,bardo,espada,100,100
+1000,Seraphineeee,mago,pistola,180,20
+1007,renato,invocador,arco,100,100
+1009,re,mago,adaga,100,100
+1010,renato,mago,cajado,100,100
+1012,dani,guerreiro,luvas,180,20
+1013,novoregistro,mago,cajado,0,200
+1014,oi ,         lutador          ,adaga,120,80
