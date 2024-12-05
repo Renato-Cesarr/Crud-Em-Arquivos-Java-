@@ -1003,4 +1003,5 @@
 1010,renato,mago,cajado,100,100
 1012,dani,guerreiro,luvas,180,20
 1013,novoregistro,mago,cajado,0,200
-1014,oi ,         lutador          ,adaga,120,80
+1015,renatão,bardo,cajado,190,10
+1016,puvafo,bardo,espada,199,1

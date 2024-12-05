@@ -17,23 +17,23 @@ public class desenhoDeTelas {
 		System.out.println(PURPLE
 				+ "╔══════════════════════════════════════════════════════════════════════════════════════╗" + RESET);
 		System.out.println(PURPLE + "║" + RED + "        🗡️  PREPARE-SE PARA A MAIOR AVENTURA DO RPG JAVA!  🛡️"
-				+ PURPLE + "║" + RESET);
+				+ PURPLE + "                           ║" + RESET);
 		System.out.println(PURPLE
 				+ "╠══════════════════════════════════════════════════════════════════════════════════════╣" + RESET);
 		System.out.println(PURPLE + "║" + CYAN + " 🌟 Escolha uma opção e prepare-se para a aventura épica!" + PURPLE
-				+ "║" + RESET);
+				+ "                             ║" + RESET);
 		System.out.println(PURPLE
 				+ "║                                                                                      ║" + RESET);
 		System.out.println(PURPLE + "║   " + GREEN
-				+ "1️⃣ Criar novo personagem                             🛠️               ║" + RESET);
+				+ "1️⃣ Criar novo personagem                             🛠️                              ║" + RESET);
 		System.out.println(PURPLE + "║   " + YELLOW
-				+ "2️⃣ Visualizar personagens criados                    👁️              ║" + RESET);
+				+ "2️⃣ Visualizar personagens criados                    👁️                              ║" + RESET);
 		System.out.println(PURPLE + "║   " + CYAN
-				+ "3️⃣ Alterr personagem                                  ✏️              ║" + RESET);
+				+ "3️⃣ Alterr personagem                                 ✏️                              ║" + RESET);
 		System.out.println(PURPLE + "║   " + RED
-				+ "4️⃣ Deletar personagem                                   ❌              ║" + RESET);
+				+ "4️⃣ Deletar personagem                                ❌                             ║" + RESET);
 		System.out.println(PURPLE + "║   " + WHITE
-				+ "5️⃣ Sair do jogo                                       🚪              ║" + RESET);
+				+ "5️⃣ Sair do jogo                                      🚪                             ║" + RESET);
 		System.out.println(PURPLE
 				+ "║                                                                                      ║" + RESET);
 		System.out.println(PURPLE
