@@ -1,6 +1,7 @@
 package CrudValidações;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Scanner;
 
 import CrudBasico.CrudInsert;
@@ -14,53 +15,51 @@ public class Validacoes {
     private static final String AMARELO = "\033[33m";
     static boolean verficicado = false;
     
-	public boolean ValidarEntradaInserir() { 
-		
-			HashSet<String> dadosDePersonagens = new HashSet<String>();
-			HashSet<String> dadosDeArmas = new HashSet<String>();
-			int pontosDeHabilidadesTotal = 200;
-			
-			dadosDePersonagens.add("mago");
-			dadosDePersonagens.add("guerreiro");
-			dadosDePersonagens.add("assasino");
-			dadosDePersonagens.add("bardo");
-			dadosDePersonagens.add("lutador");
-			dadosDePersonagens.add("atirador");
-			dadosDePersonagens.add("invocador");
+    
+    	
+        public static boolean validarEntradaUpdate(String nome, String classe, String arma, int vida, int mana) {
+            HashSet<String> dadosDePersonagens = new HashSet<>();
+            HashSet<String> dadosDeArmas = new HashSet<>();
+            int pontosDeHabilidadesTotal = 200;
 
-			dadosDeArmas.add("cajado");
-			dadosDeArmas.add("espada");
-			dadosDeArmas.add("adaga");
-			dadosDeArmas.add("cetro");
-			dadosDeArmas.add("luvas");
-			dadosDeArmas.add("pistola");
-			dadosDeArmas.add("grimorio");
-			dadosDeArmas.add("arco");
+            dadosDePersonagens.add("mago");
+            dadosDePersonagens.add("guerreiro");
+            dadosDePersonagens.add("assasino");
+            dadosDePersonagens.add("bardo");
+            dadosDePersonagens.add("lutador");
+            dadosDePersonagens.add("atirador");
+            dadosDePersonagens.add("invocador");
 
+            dadosDeArmas.add("cajado");
+            dadosDeArmas.add("espada");
+            dadosDeArmas.add("adaga");
+            dadosDeArmas.add("cetro");
+            dadosDeArmas.add("luvas");
+            dadosDeArmas.add("pistola");
+            dadosDeArmas.add("grimorio");
+            dadosDeArmas.add("arco");
 
-			if (c.nomeDoPersonagem.length() >25) {
-				System.out.println("nome muito grande");
-				return false;
-			}else if (c.nomeDoPersonagem.isEmpty() || c.nomeDoPersonagem == null) {
-				System.out.println("nome vazio");
-				return false;
-			}
-			String classeUsuario = c.nomeDaClasse.toLowerCase().trim();
-			if (!dadosDePersonagens.contains(classeUsuario)) {
-				System.out.println("sua classe não existe!");
-				return false;
-			}
-			String armaUsuario = c.tipoDeArma.toLowerCase().trim();
-			if (!dadosDeArmas.contains(armaUsuario)) {
-				System.out.println("arma invalida");
-				return false;
-			}
-			if ((c.pontosDeHp + c.pontosDeMana > 200 || c.pontosDeHp + c.pontosDeMana <200 )) {
-				System.out.println("Destribua os 200 pontos corretamente");
-				return false;
-			}
-			return true;
-	}
+            if (nome.length() > 25) {
+                System.out.println("Nome muito grande!");
+                return false;
+            } else if (nome.isEmpty()) {
+                System.out.println("Nome não pode estar vazio!");
+                return false;
+            }
+            if (!dadosDePersonagens.contains(classe.toLowerCase().trim())) {
+                System.out.println("Classe inválida!");
+                return false;
+            }
+            if (!dadosDeArmas.contains(arma.toLowerCase().trim())) {
+                System.out.println("Arma inválida!");
+                return false;
+            }
+            if (vida + mana != pontosDeHabilidadesTotal) {
+                System.out.println("Distribua os 200 pontos corretamente entre vida e mana!");
+                return false;
+            }
+            return true;
+        }
 	public String verificaRespostaSimples(String continuarConsulta) {
 	    continuarConsulta = "";
 	    do {
@@ -107,10 +106,10 @@ public class Validacoes {
 	        boolean valido = false;
 
 	        while (!valido) {
-	            System.out.print("Digite um número de 1 a 4: ");
+	            System.out.print("Digite um número de 1 a 5: ");
 	            if (scanner.hasNextInt()) {
 	                numero = scanner.nextInt();
-	                if (numero >= 1 && numero <= 4) {
+	                if (numero >= 1 && numero <= 5) {
 	                    valido = true; 
 	                } else {
 	                    System.out.println("Número fora do intervalo. Tente novamente.");
@@ -137,5 +136,41 @@ public class Validacoes {
             }
         }
     }
+    public static boolean validarEntrada(String nomePersonagem, String classePersonagem, String armaPersonagem,
+            int pontosVida, int pontosMana) {
+        HashSet<String> dadosDePersonagens = new HashSet<>(List.of(
+            "mago", "guerreiro", "assasino", "bardo", "lutador", "atirador", "invocador"));
+        HashSet<String> dadosDeArmas = new HashSet<>(List.of(
+            "cajado", "espada", "adaga", "cetro", "luvas", "pistola", "grimorio", "arco"));
 
+        if (nomePersonagem.length() > 25) {
+            System.out.println("Nome muito grande.");
+            return false;
+        } else if (nomePersonagem.isEmpty()) {
+            System.out.println("Nome vazio.");
+            return false;
+        }
+
+        String classeUsuario = classePersonagem.toLowerCase().trim();
+        if (!dadosDePersonagens.contains(classeUsuario)) {
+            System.out.println("Classe inválida.");
+            return false;
+        }
+
+        String armaUsuario = armaPersonagem.toLowerCase().trim();
+        if (!dadosDeArmas.contains(armaUsuario)) {
+            System.out.println("Arma inválida.");
+            return false;
+        }
+
+        if ((pontosVida + pontosMana) != 200) {
+            System.out.println("Distribuição de pontos inválida. Total deve ser 200.");
+            return false;
+        }
+
+        return true;
+    }
+    public static void consulta() {
+    	
+    }
 }

@@ -13,7 +13,6 @@ import Main.MenuDaTelaMain;
 
 public class CrudSelect {
 
-	
 	static String nomeArquivo = "CrudBasico.txt";
 	static String caminhoParaDiretorio = "/home/almaviva-linux/eclipse-workspace/CrudEmArquivos/ArquivoDoCrud/CrudBasico.txt";
 	static String linha;
@@ -25,7 +24,6 @@ public class CrudSelect {
 	private static final String CIANO = "\033[36m";
 	private static final String RESET = "\033[0m";
 	private static final String VERMELHO = "\033[31m";
-	private static final String AMARELO = "\033[33m";
 	static Validacoes v = new Validacoes();
 
 	public static void consultaGerald() throws IOException, InterruptedException {
@@ -62,9 +60,9 @@ public class CrudSelect {
 			continua = (validar.verificaRespostaSimples(continuarConsulta).equals("sim"));
 
 		} while (continua);
-        Thread.sleep(3000);
+		Thread.sleep(3000);
 		MenuDaTelaMain.chamarMenu();
-		
+
 	}
 
 	public static void consultaGeral() throws IOException {
@@ -75,28 +73,28 @@ public class CrudSelect {
 	}
 
 	public static void consultaID(String id) throws IOException {
-	    String identificadorDeId = ",";
-	    boolean registroEncontrado = false; 
-	    List<String> listaDeDados = new ArrayList<>(); 
+		String identificadorDeId = ",";
+		boolean registroEncontrado = false;
+		List<String> listaDeDados = new ArrayList<>();
 
-	    id = id.concat(identificadorDeId); 
-	    System.out.println("Buscando ID: " + id);
+		id = id.concat(identificadorDeId);
+		System.out.println("Buscando ID: " + id);
 
-	    try (BufferedReader lerArquivo = new BufferedReader(new FileReader(caminhoParaDiretorio))) {
-	        String linha;
-	        while ((linha = lerArquivo.readLine()) != null) {
-	        		if (linha.startsWith(id)) {
-	                System.out.println(CIANO + "Registro encontrado: " + linha + RESET);
-	                registroEncontrado = true;
-	                listaDeDados.add(linha);
-	        		}
-	            }
-	        }
-	if(!registroEncontrado)
+		try (BufferedReader lerArquivo = new BufferedReader(new FileReader(caminhoParaDiretorio))) {
+			String linha;
+			while ((linha = lerArquivo.readLine()) != null) {
+				if (linha.startsWith(id)) {
+					System.out.println(CIANO + "Registro encontrado: " + linha + RESET);
+					registroEncontrado = true;
+					listaDeDados.add(linha);
+				}
+			}
+		}
+		if (!registroEncontrado)
 
-	{
-		System.out.println(VERMELHO + "ID inválido ou não encontrado!" + RESET);
+		{
+			System.out.println(VERMELHO + "ID inválido ou não encontrado!" + RESET);
+		}
 	}
-}
-	
+
 }
