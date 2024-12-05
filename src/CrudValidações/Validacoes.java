@@ -136,41 +136,5 @@ public class Validacoes {
             }
         }
     }
-    public static boolean validarEntrada(String nomePersonagem, String classePersonagem, String armaPersonagem,
-            int pontosVida, int pontosMana) {
-        HashSet<String> dadosDePersonagens = new HashSet<>(List.of(
-            "mago", "guerreiro", "assasino", "bardo", "lutador", "atirador", "invocador"));
-        HashSet<String> dadosDeArmas = new HashSet<>(List.of(
-            "cajado", "espada", "adaga", "cetro", "luvas", "pistola", "grimorio", "arco"));
 
-        if (nomePersonagem.length() > 25) {
-            System.out.println("Nome muito grande.");
-            return false;
-        } else if (nomePersonagem.isEmpty()) {
-            System.out.println("Nome vazio.");
-            return false;
-        }
-
-        String classeUsuario = classePersonagem.toLowerCase().trim();
-        if (!dadosDePersonagens.contains(classeUsuario)) {
-            System.out.println("Classe inválida.");
-            return false;
-        }
-
-        String armaUsuario = armaPersonagem.toLowerCase().trim();
-        if (!dadosDeArmas.contains(armaUsuario)) {
-            System.out.println("Arma inválida.");
-            return false;
-        }
-
-        if ((pontosVida + pontosMana) != 200) {
-            System.out.println("Distribuição de pontos inválida. Total deve ser 200.");
-            return false;
-        }
-
-        return true;
-    }
-    public static void consulta() {
-    	
-    }
 }

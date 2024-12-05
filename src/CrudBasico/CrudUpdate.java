@@ -37,7 +37,7 @@ public class CrudUpdate {
 		if (!diretorio.exists()) {
 			diretorio.mkdirs();
 		}
-		chamarMudanca();
+		chamarMudanca(); 
 
 		leitor.close();
 		fileWriter.close();
