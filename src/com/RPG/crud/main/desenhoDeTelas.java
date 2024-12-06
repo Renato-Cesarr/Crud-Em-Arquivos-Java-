@@ -40,7 +40,7 @@ public class desenhoDeTelas {
 				+ "╚══════════════════════════════════════════════════════════════════════════════════════╝" + RESET);
 		System.out.println();
 		System.out.println(YELLOW
-				+ "⚔️  Digite o número correspondente e pressione ENTER. Boa sorte nos campos de batalha!!! ⚔️" + RESET);
+				+ "⚔️  Digite o número correspondente e pressione ENTER. Boa sorte nos campos de batalha!! ⚔️" + RESET);
 	}
 	
 
