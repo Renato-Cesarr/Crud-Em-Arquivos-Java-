@@ -40,7 +40,7 @@ public class desenhoDeTelas {
 				+ "╚══════════════════════════════════════════════════════════════════════════════════════╝" + RESET);
 		System.out.println();
 		System.out.println(YELLOW
-				+ "⚔️  Digite o número correspondente e pressione ENTER. Boa sorte nos campos de batalha! ⚔️" + RESET);
+				+ "⚔️  Digite o número correspondente e pressione ENTER. Boa sorte nos campos de batalha!!! ⚔️" + RESET);
 	}
 	
 
@@ -74,7 +74,7 @@ public class desenhoDeTelas {
 	        System.out.println(PURPLE + "════════════════════════════════════════════════════════════════════════════════════════" + RESET);
 	        
 	        Thread.sleep(500);
-	        System.out.println(YELLOW + "                 Bem-vindo ao lendário RPG JAVA! 🌟" + RESET);
+	        System.out.println(YELLOW + "                    Bem-vindo ao lendário RPG JAVA! 🌟" + RESET);
 	        Thread.sleep(1000);
 	        System.out.println();
 	    }
