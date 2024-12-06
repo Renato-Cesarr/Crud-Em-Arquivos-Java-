@@ -57,7 +57,7 @@ public class desenhoDeTelas {
 	public static void tituloTelaInicial() throws InterruptedException {
 	     String[] titulo = {
 	                RED + "         ██████╗ " + YELLOW + "██████╗  " + GREEN + "██████╗      " + BLUE + "██████╗" + PURPLE + "██╗  ██╗"+CYAN+" █████╗"+WHITE+" ██████╗ "+RED+"███████╗",
-	                RED + "         ██╔══██╗" + YELLOW + "██╔══██╗" + GREEN + "██╔════╝     " + BLUE + "██╔══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══╝" + PURPLE + "██║  ██║"+CYAN+"██╔══██╗"+WHITE+"██╔══██╗"+RED+"██╔════╝",
+	                RED + "         ██╔══██╗" + YELLOW + "██╔══██╗" + GREEN + "██╔════╝     " + BLUE + "██╔════╝" + PURPLE + "██║  ██║"+CYAN+"██╔══██╗"+WHITE+"██╔══██╗"+RED+"██╔════╝",
 	                RED + "         ██████╔╝" + YELLOW + "██████╔╝" + GREEN + "██║  ███╗    " + BLUE + "██║     " + PURPLE + "███████║"+CYAN+"███████║"+WHITE+"██████╔╝"+RED+"███████╗",
 	                RED + "         ██╔══██╗" + YELLOW + "██╔═══╝ " + GREEN + "██║   ██║    " + BLUE + "██║     " + PURPLE + "██╔══██║"+CYAN+"██╔══██║"+WHITE+"██╔══██╗"+RED+"╚════██║",
 	                RED + "         ██║  ██║" + YELLOW + "██║     " + GREEN + "╚██████╔╝    " + BLUE + "╚██████╗" + PURPLE + "██║  ██║"+CYAN+"██║  ██║"+WHITE+"██║  ██║"+RED+"███████║",
