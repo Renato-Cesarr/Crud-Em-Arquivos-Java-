@@ -22,10 +22,11 @@ public class CrudSelect {
 	static Validacoes v = new Validacoes();
 
 	public static void consultaGerald() throws IOException, InterruptedException {
-		v.limparTela();
+		Validacoes.limparTela();
 		String continuarConsulta;
 		boolean continua;
 		do {
+			//para cada if podemos fazer uma refatoração
 			String tipoConsulta = "";
 			tipoConsulta = v.validarIdouPersonagem(tipoConsulta);
 
@@ -55,7 +56,9 @@ public class CrudSelect {
 			continua = (validar.verificaRespostaSimples(continuarConsulta).equals("sim"));
 
 		} while (continua);
+		System.out.println("Salvando ...");
 		Thread.sleep(3000);
+		Validacoes.limparTela();
 		MenuDaTelaMain.chamarMenu();
 
 	}

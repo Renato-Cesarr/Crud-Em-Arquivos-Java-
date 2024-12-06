@@ -996,7 +996,7 @@
 996,Lyra,bardo,pistola,68,132
 997,Calen,mago,cetro,44,156
 998,Calen,mago,cetro,181,19
-999,Kadence,invocador,luvas,166,34
+999,cadencia,bardo,pistola,1,199
 1000,Seraphineeee,mago,pistola,180,20
 1007,renato,invocador,arco,100,100
 1009,re,mago,adaga,100,100
@@ -1005,3 +1005,4 @@
 1013,novoregistro,mago,cajado,0,200
 1015,renatão,bardo,cajado,190,10
 1016,puvafo,bardo,espada,199,1
+1017,mouse lenovo,bardo,pistola,90,110

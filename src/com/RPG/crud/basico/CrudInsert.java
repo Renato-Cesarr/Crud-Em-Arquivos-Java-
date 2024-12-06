@@ -37,7 +37,7 @@ public class CrudInsert {
 		verificarSeDiretorioExisteSalvar(textoDoArquivo);
 
 		id++;
-
+		System.out.println("Salvando ...");
 		Thread.sleep(3000);
 		MenuDaTelaMain.chamarMenu();
 	}

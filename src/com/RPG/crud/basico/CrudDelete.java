@@ -19,6 +19,7 @@ public class CrudDelete {
     private static final Scanner scan = new Scanner(System.in);
 
     public static void deletarArquivo() throws IOException, InterruptedException {
+    	Validacoes.limparTela();
         desenhoDeTelas.exibirTelaDelete();
         consultaOpcional();
 
@@ -42,8 +43,9 @@ public class CrudDelete {
         } else {
             System.out.println("Nenhum registro foi encontrado com o ID informado.");
         }
-
+        System.out.println("Salvando ...");
         Thread.sleep(3000);
+        Validacoes.limparTela();
         MenuDaTelaMain.chamarMenu();
     }
 

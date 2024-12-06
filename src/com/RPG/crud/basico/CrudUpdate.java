@@ -20,6 +20,7 @@ public class CrudUpdate {
     private static int idAserAlterado;
     
     public static void alterarArquivo() throws IOException, InterruptedException {
+    	Validacoes.limparTela();
         desenhoDeTelas.exibirTelaUpdate();
         CrudDelete.consultaOpcional();
 
@@ -42,8 +43,10 @@ public class CrudUpdate {
         } else {
             System.out.println("Erro ao alterar o registro.");
         }
-
+        
+        System.out.println("Salvando ...");
         Thread.sleep(3000);
+        Validacoes.limparTela();
         MenuDaTelaMain.chamarMenu();
     }
 

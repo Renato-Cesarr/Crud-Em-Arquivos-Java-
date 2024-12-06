@@ -989,14 +989,13 @@
 989,Arannis,invocador,adaga,79,121
 990,Falstad,lutador,adaga,145,55
 991,Lyra,atirador,cetro,131,69
-992,Thalion,guerreiro,cetro,73,127
 993,Thalion,guerreiro,adaga,37,163
 994,Eowyn,mago,espada,200,0
 995,Haldor,assasino,pistola,62,138
 996,Lyra,bardo,pistola,68,132
 997,Calen,mago,cetro,44,156
 998,Calen,mago,cetro,181,19
-999,Kadence,invocador,luvas,166,34
+999,cadencia,bardo,pistola,1,199
 1000,Seraphineeee,mago,pistola,180,20
 1007,renato,invocador,arco,100,100
 1009,re,mago,adaga,100,100
@@ -1005,3 +1004,5 @@
 1013,novoregistro,mago,cajado,0,200
 1015,renatão,bardo,cajado,190,10
 1016,puvafo,bardo,espada,199,1
+1018,re,mago,adaga,100,100
+1019,gostoso,mago,adaga,90,110
