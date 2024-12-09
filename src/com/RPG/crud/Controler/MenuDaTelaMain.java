@@ -1,6 +1,6 @@
-package com.RPG.crud.main;
-import com.RPG.crud.basico.*;
-import com.RPG.crud.validacoes.*;
+package com.RPG.crud.Controler;
+import com.RPG.crud. Repositories.*;
+import com.RPG.crud.Service.*;
 
 import java.io.IOException;
 import java.util.Scanner;

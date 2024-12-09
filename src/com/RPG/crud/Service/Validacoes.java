@@ -1,8 +1,9 @@
-package com.RPG.crud.validacoes;
+package com.RPG.crud.Service;
 
 import java.util.HashSet;
 import java.util.Scanner;
-import com.RPG.crud.basico.*;
+
+import com.RPG.crud. Repositories.*;
 
 public class Validacoes {
 	static CrudInsert c = new CrudInsert();

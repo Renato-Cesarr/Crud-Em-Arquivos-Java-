@@ -1006,3 +1006,4 @@
 1016,puvafo,bardo,espada,199,1
 1018,re,mago,adaga,100,100
 1019,gostoso,mago,adaga,90,110
+1021,daskdjaskldasd,guerreiro,arco,100,100

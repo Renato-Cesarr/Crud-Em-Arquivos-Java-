@@ -1,6 +1,6 @@
-package com.RPG.crud.main;
+package com.RPG.crud.Controler;
 
-import com.RPG.crud.validacoes.*;
+import com.RPG.crud.Service.*;
 
 public class desenhoDeTelas {
 	public static final String RESET = "\u001B[0m";

@@ -1,5 +1,6 @@
-package com.RPG.crud.basico;
-import com.RPG.crud.validacoes.*;
+package com.RPG.crud.Repositories;
+import com.RPG.crud.Controler.MenuDaTelaMain;
+import com.RPG.crud.Service.*;
 import com.RPG.crud.main.*;
 import java.io.BufferedReader;
 import java.io.File;
