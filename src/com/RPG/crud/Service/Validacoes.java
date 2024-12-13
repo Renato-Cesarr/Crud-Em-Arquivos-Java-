@@ -25,7 +25,7 @@ public class Validacoes {
 		dadosDePersonagens.add("invocador");
 
 		dadosDeArmas.add("cajado");
-		dadosDeArmas.add("espada");
+		dadosDeArmas.add("espada"); 
 		dadosDeArmas.add("adaga");
 		dadosDeArmas.add("cetro");
 		dadosDeArmas.add("luvas");

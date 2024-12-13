@@ -885,7 +885,6 @@
 885,Aedric,mago,luvas,160,40
 886,Tharion,guerreiro,adaga,74,126
 887,Lirien,invocador,cajado,143,57
-888,Borodin,guerreiro,luvas,41,159
 889,Kaelthas,invocador,espada,101,99
 890,Tharion,assasino,arco,45,155
 891,Lyra,invocador,cetro,180,20
@@ -1007,3 +1006,5 @@
 1018,re,mago,adaga,100,100
 1019,gostoso,mago,adaga,90,110
 1021,daskdjaskldasd,guerreiro,arco,100,100
+1022,renatooooooooo,atirador,pistola,199,1
+1023,rafa,assasino,cajado,1,199

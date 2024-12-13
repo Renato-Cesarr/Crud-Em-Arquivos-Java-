@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class MenuDaTelaMain {
 
 	public static void chamarMenu() throws InterruptedException, IOException {
+		Validacoes.limparTela();
 		desenhaTelaInicial();
 	}
 
@@ -23,7 +24,7 @@ public class MenuDaTelaMain {
 				Validacoes.limparTela();
 				CrudInsert.inserir();
 				break;
-			}
+			} 
 			case 2: {
 				System.out.print("\033[H\033[2J");
 				System.out.flush();
