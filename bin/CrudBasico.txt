@@ -994,7 +994,6 @@
 996,Lyra,bardo,pistola,68,132
 997,Calen,mago,cetro,44,156
 998,Calen,mago,cetro,181,19
-999,cadencia,bardo,pistola,1,199
 1000,Seraphineeee,mago,pistola,180,20
 1007,renato,invocador,arco,100,100
 1009,re,mago,adaga,100,100
@@ -1008,3 +1007,6 @@
 1021,daskdjaskldasd,guerreiro,arco,100,100
 1022,renatooooooooo,atirador,pistola,199,1
 1023,rafa,assasino,cajado,1,199
+1024,paulo gueades,mago,adaga,199,1
+1025,naruto,guerreiro,adaga,100,100
+1026,re,mago,adaga,199,1

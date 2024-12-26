@@ -9,11 +9,13 @@ import com.RPG.model.Personagem;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.logging.Logger;
 
 public class CrudInsert {
 
-    private static final HashMap<Integer, Personagem> ID_USUARIO_MAP = new HashMap<>();
-    private static int id;
+    private static final Logger logger = Logger.getLogger(CrudInsert.class.getName());
+    public static final HashMap<Integer, Personagem> ID_USUARIO_MAP = new HashMap<>();
+    public static int id;
 
     public static void inserir() throws IOException, InterruptedException {
         desenhoDeTelas.exibirTelaInsert();
@@ -22,15 +24,18 @@ public class CrudInsert {
         Personagem personagem = obterDadosUsuario();
         ID_USUARIO_MAP.put(id, personagem);
 
+        logger.info("Salvando personagem com ID: " + id);
+
         ArquivoUtils.salvarNoArquivo(ArquivoUtils.formatarTextoParaArquivo(id, personagem), Constantes.NOME_ARQUIVO);
 
         id++;
+        logger.info("Personagem salvo. ID incrementado para: " + id);
         System.out.println("Salvando ...");
         Thread.sleep(3000);
         MenuDaTelaMain.chamarMenu();
     }
 
-    private static Personagem obterDadosUsuario() {
+    public static Personagem obterDadosUsuario() {
         Validacoes validacoes = new Validacoes();
         boolean dadosValidos;
         String nomePersonagem = "", nomeClasse = "", tipoArma = "";
@@ -51,7 +56,14 @@ public class CrudInsert {
                 Constantes.SCAN.nextLine();
 
                 dadosValidos = validacoes.validarEntradaUpdate(nomePersonagem, nomeClasse, tipoArma, pontosHp, pontosMana);
+
+                if (dadosValidos) {
+                    logger.info("Dados válidos para personagem: " + nomePersonagem);
+                } else {
+                    logger.warning("Dados inválidos fornecidos para o personagem " + nomePersonagem);
+                }
             } catch (Exception e) {
+                logger.severe("Erro ao inserir dados do personagem: " + e.getMessage());
                 System.out.println("Não digite texto no lugar dos números! Por favor, insira os dados novamente.");
                 Constantes.SCAN.nextLine();
                 dadosValidos = false;

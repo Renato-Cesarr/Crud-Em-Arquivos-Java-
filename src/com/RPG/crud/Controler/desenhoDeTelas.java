@@ -43,17 +43,6 @@ public class desenhoDeTelas {
 				+ "⚔️  Digite o número correspondente e pressione ENTER. Boa sorte nos campos de batalha!! ⚔️" + RESET);
 	}
 	
-
-/*
-██████╗ ██████╗  ██████╗ 
-██╔══██╗██╔══██╗██╔════╝ 
-██████╔╝██████╔╝██║  ███╗
-██╔══██╗██╔═══╝ ██║   ██║
-██║  ██║██║     ╚██████╔╝
-╚═╝  ╚═╝╚═╝      ╚═════╝ 
-*/
-
-
 	public static void tituloTelaInicial() throws InterruptedException {
 	     String[] titulo = {
 	                RED + "         ██████╗ " + YELLOW + "██████╗  " + GREEN + "██████╗      " + BLUE + "██████╗" + PURPLE + "██╗  ██╗"+CYAN+" █████╗"+WHITE+" ██████╗ "+RED+"███████╗",

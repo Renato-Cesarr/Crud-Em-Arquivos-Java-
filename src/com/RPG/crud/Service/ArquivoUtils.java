@@ -6,11 +6,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.InputMismatchException;
+import java.util.logging.Logger;
 
 import com.RPG.crud.Repositories.CrudSelect;
 import com.RPG.model.Personagem;
 
 public class ArquivoUtils {
+
+	private static final Logger logger = Logger.getLogger(ArquivoUtils.class.getName());
 
 	public static void salvarNoArquivo(String texto, String nomeArquivo) {
 		try {
@@ -21,10 +24,10 @@ public class ArquivoUtils {
 			File arquivo = new File(Constantes.DIRETORIO, nomeArquivo);
 			try (FileWriter writer = new FileWriter(arquivo, true)) {
 				writer.write(texto);
-				System.out.println("Dados salvos no arquivo: " + arquivo.getAbsolutePath());
+				logger.info("Dados salvos no arquivo: " + arquivo.getAbsolutePath());
 			}
 		} catch (IOException e) {
-			System.err.println("Erro ao salvar o arquivo: " + e.getMessage());
+			logger.severe("Erro ao salvar o arquivo: " + e.getMessage());
 		}
 	}
 
@@ -42,7 +45,7 @@ public class ArquivoUtils {
 					}
 				}
 			} catch (IOException e) {
-				System.err.println("Erro ao carregar o último ID: " + e.getMessage());
+				logger.severe("Erro ao carregar o último ID: " + e.getMessage());
 			}
 		}
 		return id;
@@ -55,17 +58,17 @@ public class ArquivoUtils {
 	}
 
 	public static void consultaOpcional() throws IOException {
-		System.out.println("Deseja consultar os registros antes de deletar? (S/N):");
+		logger.info("Deseja consultar os registros antes de deletar? (S/N):");
 		boolean respostaValida = false;
 		do {
 			String resposta = Constantes.SCAN.nextLine().toUpperCase().trim();
 			if (resposta.equals("S")) {
 				CrudSelect.consultaGeral();
-				respostaValida = true; 
+				respostaValida = true;
 			} else if (resposta.equals("N")) {
 				respostaValida = true;
 			} else {
-				System.out.println(Constantes.VERMELHO + "Resposta Invalida" + Constantes.RESET);
+				logger.warning(Constantes.VERMELHO + "Resposta Invalida" + Constantes.RESET);
 			}
 		} while (!respostaValida);
 	}
@@ -76,12 +79,12 @@ public class ArquivoUtils {
 
 		while (!idValido) {
 			try {
-				System.out.print(mensagem);
+				logger.info(mensagem);
 				idAlterar = Constantes.SCAN.nextInt();
 				Constantes.SCAN.nextLine();
 				idValido = true;
 			} catch (InputMismatchException e) {
-				System.out.println("Erro: O ID deve ser um número inteiro. Tente novamente.");
+				logger.warning("Erro: O ID deve ser um número inteiro. Tente novamente.");
 				Constantes.SCAN.nextLine();
 			}
 		}
